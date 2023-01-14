@@ -1,6 +1,6 @@
 import Dependencies._
 
-ThisBuild / organization := "com.traversymedia"
+ThisBuild / organization := "com.xonal"
 ThisBuild / scalaVersion := "2.13.8"
 
 ThisBuild / watchTriggeredMessage := Watch.clearScreenOnTrigger
