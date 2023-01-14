@@ -36,4 +36,26 @@ object FunctionalProgramming extends App{
     numbers <- List(1,2,3)
     letters <- List('a', 'b', 'c')
   } yield s"$numbers-$letters"
+
+  // class Composite[A,B]
+  // val myComp: Int Composite String = ???
+
+  // class -->[A,B]
+  // val g: Int --> String = ???
+
+  object lessThan{
+    def unapply(n: Int): Boolean = n < 50
+  }
+
+  object even{
+    def unapply(n: Int): Boolean = n % 2 == 0 
+  }
+
+  val anInt = 47  
+  val checkInt = anInt match {
+    case even() => "IsEven"
+    case lessThan() => "Is Less than"
+    case _ => "Something else"
+  }
+  println(checkInt)
 }

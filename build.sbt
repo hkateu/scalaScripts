@@ -39,6 +39,7 @@ lazy val dependencies = Seq(
   libraryDependencies ++= Seq(
     // main dependencies
   ),
+
   libraryDependencies ++= Seq(
     com.github.alexarchambault.`scalacheck-shapeless_1.15`,
     org.scalacheck.scalacheck,
@@ -47,3 +48,7 @@ lazy val dependencies = Seq(
     org.typelevel.`discipline-scalatest`,
   ).map(_ % Test),
 )
+
+libraryDependencies += "org.scalacheck" %% "scalacheck" % "1.14.1" % "test"
+
+Test/ testOptions += Tests.Argument(TestFrameworks.ScalaCheck, "-s", "5")
